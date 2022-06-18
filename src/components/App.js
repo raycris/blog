@@ -25,6 +25,9 @@ const App = () => {
         <LabelContainer>
           <Label>Hello word, I'm Raycris Maldonado. Front-end developer</Label>
         </LabelContainer>
+        <ConsoleContainer>
+          <CosoleBorder />
+        </ConsoleContainer>
       </InforContainer>
 
       <Tabla>
@@ -80,15 +83,33 @@ const HeroPiture = styled.img`
 `;
 
 const InforContainer = styled.div`
-  height: 500px;
+  height: 900px;
+  display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
+
   background-color: #c26868;
 `;
 
 const LabelContainer = styled.div`
-display: flex;
+  padding: 28px;
+  display: flex;
   align-items: center;
   justify-content: center;
 `;
 const Label = styled.h2``;
+
+const ConsoleContainer = styled.section`
+  width: 670px;
+  height: 620px;
+  background: #383737;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+`;
+const CosoleBorder = styled.div`
+  height: 20px;
+  background: #ccc;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+`;
