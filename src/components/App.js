@@ -3,6 +3,16 @@ import styled from "styled-components";
 
 import HeroPhoto from "../assets/img/code.jpg";
 
+const infor = [
+  {
+    orgin: "Santo Domingo, Dominican Replic",
+    education: "Instituto Tecnológico de Santo Domingo",
+    degree: "Software Enginieer",
+    email: "raycris97@gmail.com",
+    interest: ["Reactjs", "React native", "Front-end"],
+  },
+];
+
 const App = () => {
   const [users, setUsers] = useState([
     {
@@ -27,6 +37,18 @@ const App = () => {
         </LabelContainer>
         <ConsoleContainer>
           <CosoleBorder />
+          {infor.map((item) => (
+            <>
+              <CosoleDescription>
+                Raycris.oring
+                {item.orgin}
+              </CosoleDescription>
+              <CosoleDescription>{item.education}</CosoleDescription>
+              <CosoleDescription>{item.degree}</CosoleDescription>
+              <CosoleDescription>{item.email}</CosoleDescription>
+              <CosoleDescription>{item.interest}</CosoleDescription>
+            </>
+          ))}
         </ConsoleContainer>
       </InforContainer>
 
@@ -88,7 +110,6 @@ const InforContainer = styled.div`
   align-items: center;
   flex-direction: column;
   justify-content: center;
-
   background-color: #c26868;
 `;
 
@@ -112,4 +133,10 @@ const CosoleBorder = styled.div`
   background: #ccc;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
+`;
+
+const CosoleDescription = styled.h4`
+  line-height: 20px;
+  font-size: 20px;
+  color: white;
 `;
