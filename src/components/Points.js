@@ -5,7 +5,7 @@ import styled from "styled-components";
 const Points = () => {
   return (
     <Container>
-      <Cicle />
+      <Cicle  style={{backgroundColor: "red"}}/>
       <Cicle style={{backgroundColor: "#DEB318"}}/>
       <Cicle style={{backgroundColor: "#32E61E"}}/>
     </Container>
@@ -24,5 +24,4 @@ const Cicle = styled.div`
   height: 10px;
   margin: 0 4px;
   border-radius: 50%;
-  background-color: red;
 `;
