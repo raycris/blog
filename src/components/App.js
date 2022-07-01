@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 import HeroPhoto from "../assets/img/code.jpg";
+import GithubSVG from "../assets/icon/github.svg";
+import "../index.css";
+import Points from "./Points";
 
 const infor = [
   {
@@ -9,7 +12,7 @@ const infor = [
     education: "Instituto Tecnológico de Santo Domingo",
     degree: "Software Enginieer",
     email: "raycris97@gmail.com",
-    interest: ["Reactjs", "React native", "Front-end"],
+    github: "https://github.com/raycris",
   },
 ];
 
@@ -26,6 +29,7 @@ const App = () => {
       link: "Pricolito.com",
     },
   ]);
+
   return (
     <Margen>
       <PintureContainer>
@@ -36,18 +40,32 @@ const App = () => {
           <Label>Hello word, I'm Raycris Maldonado. Front-end developer</Label>
         </LabelContainer>
         <ConsoleContainer>
-          <CosoleBorder />
+          <CosoleBorder>
+            <Points />
+            <></>
+            <></>
+          </CosoleBorder>
           {infor.map((item) => (
-            <>
-              <CosoleDescription>
-                Raycris.oring
-                {item.orgin}
-              </CosoleDescription>
-              <CosoleDescription>{item.education}</CosoleDescription>
-              <CosoleDescription>{item.degree}</CosoleDescription>
-              <CosoleDescription>{item.email}</CosoleDescription>
-              <CosoleDescription>{item.interest}</CosoleDescription>
-            </>
+            <TextContainer>
+              <CosoleDescription>Raycris.oring </CosoleDescription>
+              <Subtitle>{item.orgin} 📌</Subtitle>
+              <CosoleDescription>Raycris.education</CosoleDescription>
+              <Subtitle>{item.education} 🐝📕</Subtitle>
+              <CosoleDescription>Raycris.degree</CosoleDescription>
+              <Subtitle>{item.degree} 👨🏾‍💻</Subtitle>
+              <CosoleDescription>Raycris.github</CosoleDescription>
+              <Subtitle>
+                <a>{item.github} ☁️</a>
+              </Subtitle>
+              <CosoleDescription>Raycris.email</CosoleDescription>
+              <Subtitle>{item.email} 📧</Subtitle>
+              <CosoleDescription>Raycris.skills</CosoleDescription>
+              <Subtitle>
+                ["Reactjs", "React native", "Front-end", "JavaScript", "Git &
+                GitHub", "HTML", "CSS", "Sass", "PostgresSQL", "Angular", "BEM"]
+                🤹🏾
+              </Subtitle>
+            </TextContainer>
           ))}
         </ConsoleContainer>
       </InforContainer>
@@ -119,10 +137,12 @@ const LabelContainer = styled.div`
   align-items: center;
   justify-content: center;
 `;
-const Label = styled.h2``;
+const Label = styled.h2`
+  font-family: "Press Start 2P", cursive;
+`;
 
 const ConsoleContainer = styled.section`
-  width: 670px;
+  width: 38%;
   height: 620px;
   background: #383737;
   border-top-left-radius: 6px;
@@ -131,12 +151,30 @@ const ConsoleContainer = styled.section`
 const CosoleBorder = styled.div`
   height: 20px;
   background: #ccc;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
 `;
 
-const CosoleDescription = styled.h4`
-  line-height: 20px;
-  font-size: 20px;
+const CosoleDescription = styled.p`
   color: white;
+  font-size: 20px;
+  line-height: 20px;
+  font-family: "Source Code Pro", monospace;
+`;
+
+const Subtitle = styled.h4`
+  color: #ccc;
+  flex-wrap: nowrap;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: "Source Code Pro", monospace;
+`;
+
+const TextContainer = styled.section`
+  margin-left: 36px;
+  max-width: fit-content;
 `;
