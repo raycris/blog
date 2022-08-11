@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import HeroPhoto from "../assets/img/code.jpg";
-import "../index.css";
 import { colors } from "../utils/colors";
 import { fontSize, fontFamily } from "../utils/fonts";
 import Points from "./Points";
+import "../index.css";
 
 const infor = [
   {
@@ -15,23 +15,10 @@ const infor = [
     github: "https://github.com/raycris",
   },
 ];
-const users = [
-  {
-    name: "Raycris",
-    email: "Raycris97@gmail.com",
-    link: "https://gitdub.com/raycris",
-  },
-  {
-    name: "Juan",
-    email: "JuancitoPricolito@gmail.com",
-    link: "Pricolito.com",
-  },
-];
 
 const App = () => {
-
   return (
-    <Margen>
+    <Container>
       <PintureContainer>
         <HeroPiture src={HeroPhoto} alt="Hero image" />
       </PintureContainer>
@@ -40,26 +27,34 @@ const App = () => {
           <Label>Hello word, I'm Raycris Maldonado. Front-end developer</Label>
         </LabelContainer>
         <ConsoleContainer>
-          <CosoleBorder>
+          <ConsoleBorder>
             <Points />
             <></>
             <></>
-          </CosoleBorder>
+          </ConsoleBorder>
           {infor.map((item) => (
             <TextContainer>
-              <CosoleDescription>Raycris.oring </CosoleDescription>
+              <ConsoleDescription>C:\Users\Raycris\oring </ConsoleDescription>
               <Subtitle>{item.orgin} 📌</Subtitle>
-              <CosoleDescription>Raycris.education</CosoleDescription>
+              <ConsoleDescription>
+                C:\Users\Raycris\education
+              </ConsoleDescription>
               <Subtitle>{item.education} 🐝📕</Subtitle>
-              <CosoleDescription>Raycris.degree</CosoleDescription>
+              <ConsoleDescription>C:\Users\Raycris\degree</ConsoleDescription>
               <Subtitle>{item.degree} 👨🏾‍💻</Subtitle>
-              <CosoleDescription>Raycris.github</CosoleDescription>
+              <ConsoleDescription>C:\Users\Raycris\github</ConsoleDescription>
               <Subtitle>
-                <a>{item.github} ☁️</a>
+                <a
+                  href="https://github.com/raycris"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {item.github} ☁️
+                </a>
               </Subtitle>
-              <CosoleDescription>Raycris.email</CosoleDescription>
+              <ConsoleDescription>C:\Users\Raycris\email</ConsoleDescription>
               <Subtitle>{item.email} 📧</Subtitle>
-              <CosoleDescription>Raycris.skills</CosoleDescription>
+              <ConsoleDescription>C:\Users\Raycris\skills</ConsoleDescription>
               <Subtitle>
                 ["Reactjs", "React native", "Front-end", "JavaScript", "Git &
                 GitHub", "HTML", "CSS", "Sass", "PostgresSQL", "Angular", "BEM"]
@@ -70,40 +65,16 @@ const App = () => {
         </ConsoleContainer>
       </InforContainer>
 
-      <Tabla>
-        <thead>
-          <tr>
-            <th>name</th>
-            <th>email</th>
-            <th>link</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users.map((user) => (
-            <tr key={user.email}>
-              <td>{user.name}</td>
-              <td>{user.email}</td>
-              <td>{user.link}</td>
-            </tr>
-          ))}
-        </tbody>
-      </Tabla>
-    </Margen>
+      <FooterContainer>
+        <FooterLabel>By: Raycris</FooterLabel>
+      </FooterContainer>
+    </Container>
   );
 };
 
 export default App;
 
-const Tabla = styled.table`
-  width: 100%;
-  text-align: left;
-  td {
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-`;
-
-const Margen = styled.div`
+const Container = styled.div`
   width: 100%;
   height: 100%;
 `;
@@ -148,7 +119,7 @@ const ConsoleContainer = styled.section`
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
 `;
-const CosoleBorder = styled.div`
+const ConsoleBorder = styled.div`
   height: 20px;
   display: flex;
   background: ${colors.lightGray};
@@ -159,10 +130,11 @@ const CosoleBorder = styled.div`
   border-top-right-radius: 6px;
 `;
 
-const CosoleDescription = styled.p`
-  color: ${fontFamily.white};
-  font-size: ${fontSize.base};
+const ConsoleDescription = styled.p`
+  color: ${colors.consoleGreen};
+  font-size: ${fontSize.small};
   line-height: 20px;
+  font-weight: bold;
   font-family: ${fontFamily.primary};
 `;
 
@@ -177,4 +149,15 @@ const Subtitle = styled.h4`
 const TextContainer = styled.section`
   max-width: fit-content;
   margin-left: 36px;
+`;
+
+const FooterContainer = styled.section`
+  display: flex;
+  align-items: center;
+  justify-content: end;
+`;
+
+const FooterLabel = styled.p`
+  font-size: ${fontSize.small};
+  font-family: ${fontFamily.secundary};
 `;
