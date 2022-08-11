@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-
 import HeroPhoto from "../assets/img/code.jpg";
-import GithubSVG from "../assets/icon/github.svg";
 import "../index.css";
+import { colors } from "../utils/colors";
+import { fontSize, fontFamily } from "../utils/fonts";
 import Points from "./Points";
 
 const infor = [
@@ -15,20 +15,20 @@ const infor = [
     github: "https://github.com/raycris",
   },
 ];
+const users = [
+  {
+    name: "Raycris",
+    email: "Raycris97@gmail.com",
+    link: "https://gitdub.com/raycris",
+  },
+  {
+    name: "Juan",
+    email: "JuancitoPricolito@gmail.com",
+    link: "Pricolito.com",
+  },
+];
 
 const App = () => {
-  const [users, setUsers] = useState([
-    {
-      name: "Raycris",
-      email: "Raycris97@gmail.com",
-      link: "https://gitdub.com/raycris",
-    },
-    {
-      name: "Juan",
-      email: "JuancitoPricolito@gmail.com",
-      link: "Pricolito.com",
-    },
-  ]);
 
   return (
     <Margen>
@@ -128,7 +128,7 @@ const InforContainer = styled.div`
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  background-color: #c26868;
+  background-color: ${colors.softRed};
 `;
 
 const LabelContainer = styled.div`
@@ -138,43 +138,43 @@ const LabelContainer = styled.div`
   justify-content: center;
 `;
 const Label = styled.h2`
-  font-family: "Press Start 2P", cursive;
+  font-family: ${fontFamily.secundary};
 `;
 
 const ConsoleContainer = styled.section`
   width: 38%;
   height: 620px;
-  background: #383737;
+  background: ${colors.darkGray};
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
 `;
 const CosoleBorder = styled.div`
   height: 20px;
-  background: #ccc;
   display: flex;
-  flex-direction: row;
+  background: ${colors.lightGray};
   align-items: center;
+  flex-direction: row;
   justify-content: space-between;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
 `;
 
 const CosoleDescription = styled.p`
-  color: white;
-  font-size: 20px;
+  color: ${fontFamily.white};
+  font-size: ${fontSize.base};
   line-height: 20px;
-  font-family: "Source Code Pro", monospace;
+  font-family: ${fontFamily.primary};
 `;
 
 const Subtitle = styled.h4`
-  color: #ccc;
+  color: ${colors.lightGray};
   flex-wrap: nowrap;
-  font-size: 16px;
+  font-size: ${fontSize.small};
   line-height: 20px;
-  font-family: "Source Code Pro", monospace;
+  font-family: ${fontFamily.primary};
 `;
 
 const TextContainer = styled.section`
-  margin-left: 36px;
   max-width: fit-content;
+  margin-left: 36px;
 `;
