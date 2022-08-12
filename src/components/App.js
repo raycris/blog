@@ -8,11 +8,27 @@ import "../index.css";
 
 const infor = [
   {
-    orgin: "Santo Domingo, Dominican Replic",
-    education: "Instituto Tecnológico de Santo Domingo",
-    degree: "Software Enginieer",
-    email: "raycris97@gmail.com",
-    github: "https://github.com/raycris",
+    id: 1,
+    directory: "Santo Domingo, Dominican Replic",
+    route: "C:/Users/Raycris/oring",
+  },
+  {
+    id: 2,
+    directory: "Instituto Tecnológico de Santo Domingo",
+    route: "C:/Users/Raycris/education",
+  },
+  { id: 3, directory: "Software Enginieer", route: "C:/Users/Raycris/degree" },
+  { id: 4, directory: "raycris97@gmail.com", route: "C:/Users/Raycris/email" },
+  {
+    id: 5,
+    directory: "https://github.com/raycris",
+    route: "C:/Users/Raycris/github",
+  },
+  {
+    id: 6,
+    directory:
+      "[ Reactjs, React native, Front-end, JavaScript, Git&GitHub, HTML, CSS, Sass, PostgresSQL, Angular, BEM ]",
+    route: "C:/Users/Raycris/skills",
   },
 ];
 
@@ -33,33 +49,31 @@ const App = () => {
             <></>
           </ConsoleBorder>
           {infor.map((item) => (
-            <TextContainer>
-              <ConsoleDescription>C:\Users\Raycris\oring </ConsoleDescription>
-              <Subtitle>{item.orgin} 📌</Subtitle>
-              <ConsoleDescription>
-                C:\Users\Raycris\education
-              </ConsoleDescription>
-              <Subtitle>{item.education} 🐝📕</Subtitle>
-              <ConsoleDescription>C:\Users\Raycris\degree</ConsoleDescription>
-              <Subtitle>{item.degree} 👨🏾‍💻</Subtitle>
-              <ConsoleDescription>C:\Users\Raycris\github</ConsoleDescription>
-              <Subtitle>
-                <a
-                  href="https://github.com/raycris"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {item.github} ☁️
-                </a>
-              </Subtitle>
-              <ConsoleDescription>C:\Users\Raycris\email</ConsoleDescription>
-              <Subtitle>{item.email} 📧</Subtitle>
-              <ConsoleDescription>C:\Users\Raycris\skills</ConsoleDescription>
-              <Subtitle>
-                ["Reactjs", "React native", "Front-end", "JavaScript", "Git &
-                GitHub", "HTML", "CSS", "Sass", "PostgresSQL", "Angular", "BEM"]
-                🤹🏾
-              </Subtitle>
+            <TextContainer key={item.id}>
+              <ConsoleDescription>{item.route}:</ConsoleDescription>
+              {item.id !== 4 && item.id !== 5 ? (
+                <Subtitle> {item.directory}</Subtitle>
+              ) : (
+                <>
+                  {item.id === 4 ? (
+                    <SpecialSubtitle
+                      href="mailto:raycris97@gmail.com"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {item.directory}
+                    </SpecialSubtitle>
+                  ) : (
+                    <SpecialSubtitle
+                      href="https://github.com/raycris"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {item.directory}
+                    </SpecialSubtitle>
+                  )}
+                </>
+              )}
             </TextContainer>
           ))}
         </ConsoleContainer>
@@ -76,7 +90,7 @@ export default App;
 
 const Container = styled.div`
   width: 100%;
-  height: 100%;
+  height: 100vh;
 `;
 
 const PintureContainer = styled.div`
@@ -122,7 +136,7 @@ const ConsoleContainer = styled.section`
 const ConsoleBorder = styled.div`
   height: 20px;
   display: flex;
-  background: ${colors.lightGray};
+  background: ${colors.lightWhite};
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
@@ -133,27 +147,41 @@ const ConsoleBorder = styled.div`
 const ConsoleDescription = styled.p`
   color: ${colors.consoleGreen};
   font-size: ${fontSize.small};
+  flex-wrap: nowrap;
   line-height: 20px;
   font-weight: bold;
   font-family: ${fontFamily.primary};
 `;
 
 const Subtitle = styled.h4`
-  color: ${colors.lightGray};
+  color: ${colors.lightWhite};
   flex-wrap: nowrap;
   font-size: ${fontSize.small};
   line-height: 20px;
+  margin-left: 8px;
   font-family: ${fontFamily.primary};
+`;
+
+const SpecialSubtitle = styled.a`
+  color: ${colors.lightWhite};
+  flex-wrap: nowrap;
+  font-size: ${fontSize.small};
+  line-height: 20px;
+  margin-left: 8px;
+  font-family: ${fontFamily.primary};
+  text-decoration: none;
 `;
 
 const TextContainer = styled.section`
   max-width: fit-content;
-  margin-left: 36px;
+  margin-left: 10px;
 `;
 
 const FooterContainer = styled.section`
   display: flex;
+  background: ${colors.lightWhite};
   align-items: center;
+  padding-right: 10px;
   justify-content: end;
 `;
 
