@@ -91,11 +91,20 @@ export default App;
 const Container = styled.div`
   width: 100%;
   height: 100vh;
+  background-color: red;
+
+  @media (min-width: 800px) {
+    width: 100%;
+  }
 `;
 
 const PintureContainer = styled.div`
   width: 100%;
   height: 400px;
+
+  @media (min-width: 300px) {
+    width: 100%;
+  }
 `;
 
 const HeroPiture = styled.img`
@@ -105,6 +114,10 @@ const HeroPiture = styled.img`
   object-fit: cover;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
+
+  @media (min-width: 600px) {
+    width: 100%;
+  }
 `;
 
 const InforContainer = styled.div`
@@ -114,6 +127,20 @@ const InforContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   background-color: ${colors.softRed};
+
+  @media (min-width: 300px) {
+    width: 100%;
+  }
+
+  @media (min-width: 600px) {
+    width: 100%;
+    height: 100vh;
+  }
+
+  @media (min-width: 800px) {
+    width: 100%;
+    height: 100vh;
+  }
 `;
 
 const LabelContainer = styled.div`
@@ -132,6 +159,20 @@ const ConsoleContainer = styled.section`
   background: ${colors.darkGray};
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
+
+  @media (min-width: 300px) {
+    width: 90%;
+    height: 75vh;
+  }
+  @media (min-width: 600px) {
+    width: 75%;
+    height: 90%;
+  }
+
+  @media (min-width: 800px) {
+    width: 50%;
+    height: 70%;
+  }
 `;
 const ConsoleBorder = styled.div`
   height: 20px;
