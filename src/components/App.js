@@ -91,7 +91,6 @@ export default App;
 const Container = styled.div`
   width: 100%;
   height: 100vh;
-  background-color: red;
 
   @media (min-width: 800px) {
     width: 100%;
@@ -101,7 +100,7 @@ const Container = styled.div`
 const PintureContainer = styled.div`
   width: 100%;
   height: 400px;
-
+  min-width: 288px;
   @media (min-width: 300px) {
     width: 100%;
   }
@@ -123,6 +122,7 @@ const HeroPiture = styled.img`
 const InforContainer = styled.div`
   height: 900px;
   display: flex;
+  min-width: 288px;
   align-items: center;
   flex-direction: column;
   justify-content: center;
@@ -156,6 +156,8 @@ const Label = styled.h2`
 const ConsoleContainer = styled.section`
   width: 38%;
   height: 620px;
+  min-width: 288px;
+  max-width: 800px;
   background: ${colors.darkGray};
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
@@ -220,6 +222,7 @@ const TextContainer = styled.section`
 
 const FooterContainer = styled.section`
   display: flex;
+  min-width: 288px;
   background: ${colors.lightWhite};
   align-items: center;
   padding-right: 10px;
