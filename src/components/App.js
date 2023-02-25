@@ -111,8 +111,6 @@ const HeroPiture = styled.img`
   height: 400px;
   flex-wrap: nowrap;
   object-fit: cover;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
 
   @media (min-width: 600px) {
     width: 100%;
